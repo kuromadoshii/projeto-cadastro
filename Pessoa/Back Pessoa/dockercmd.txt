@@ -1,0 +1,2 @@
+build: docker build -t persondbi .
+run: docker run -d -p 3306:3306 --name bd_teste_container --rm -e MYSQL_ROOT_PASSWORD=testpwd peopledbi
