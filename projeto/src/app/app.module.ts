@@ -7,13 +7,19 @@ import { AppComponent } from './app.component';
 import { NewComponentComponent } from './components/new-component/new-component.component';
 import { CadastroComponent } from './components/cadastro/cadastro.component';
 import { ParentDataComponent } from './components/parent-data/parent-data.component';
+import { DirectivesComponent } from './components/directives/directives.component';
+import { IfRenderComponent } from './components/if-render/if-render.component';
+import { EventosComponent } from './components/eventos/eventos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NewComponentComponent,
     CadastroComponent,
-    ParentDataComponent
+    ParentDataComponent,
+    DirectivesComponent,
+    IfRenderComponent,
+    EventosComponent
   ],
   imports: [
     BrowserModule,
