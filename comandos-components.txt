@@ -7,3 +7,4 @@ ng generate component components/moment-form
 ng generate service services/moment
 ng generate service services/comment
 ng generate service services/messages
+ng generate component components/messages
