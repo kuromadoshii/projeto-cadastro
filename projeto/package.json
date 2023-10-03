@@ -6,7 +6,12 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
+<<<<<<< HEAD
+    "test": "ng test",
+    "server": "json-server --watch db.json"
+=======
     "test": "ng test"
+>>>>>>> 9e27f6f0ee869a6663d65b53dfa4c7c470f9796f
   },
   "private": true,
   "dependencies": {
@@ -18,6 +23,10 @@
     "@angular/platform-browser": "^16.2.0",
     "@angular/platform-browser-dynamic": "^16.2.0",
     "@angular/router": "^16.2.0",
+<<<<<<< HEAD
+    "json-server": "^0.17.3",
+=======
+>>>>>>> 9e27f6f0ee869a6663d65b53dfa4c7c470f9796f
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"
