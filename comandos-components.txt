@@ -9,3 +9,4 @@ ng generate service services/comment
 ng generate service services/messages
 ng generate component components/messages
 ng generate component components/pages/moment
+ng generate component components/pages/edit-moment
