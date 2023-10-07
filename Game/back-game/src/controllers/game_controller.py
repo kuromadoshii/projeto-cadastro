@@ -1,6 +1,6 @@
 from flask import Flask, jsonify, request
 from flask_restx import Api
-from bd.bd_connect import cursor, conexao
+#from bd.bd_connect import cursor, conexao
 from src.server.instance import Server
 import mysql.connector
 
