@@ -6,10 +6,14 @@ describe('MomentFormComponent', () => {
   let component: MomentFormComponent;
   let fixture: ComponentFixture<MomentFormComponent>;
 
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [ MomentFormComponent ]
+    })
+    .compileComponents();
+  });
+
   beforeEach(() => {
-    TestBed.configureTestingModule({
-      declarations: [MomentFormComponent]
-    });
     fixture = TestBed.createComponent(MomentFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

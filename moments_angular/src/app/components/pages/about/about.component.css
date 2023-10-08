@@ -1,15 +1,30 @@
 .about {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2em;
 }
 
-h2, p {
-    margin-bottom: 1em;
+h2,
+p {
+  margin-bottom: 1em;
 }
 
 .about a {
-    text-decoration: underline;
+  text-decoration: underline;
+  margin-top: 2em;
+  padding: 0.1em 0.3em;
+  border-color: #dec129;
+  border: 2p;
+}
+
+
+a:hover {
+  background-color: #efefef;
+  color: #dec129;
+}
+
+.img-about {
+  width: 80%;
 }
