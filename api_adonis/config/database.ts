@@ -6,7 +6,7 @@
  */
 
 import Env from '@ioc:Adonis/Core/Env'
-import Application from '@ioc:Adonis/Core/Application'
+//import Application from '@ioc:Adonis/Core/Application'
 import { DatabaseConfig } from '@ioc:Adonis/Lucid/Database'
 
 const databaseConfig: DatabaseConfig = {
@@ -34,17 +34,29 @@ const databaseConfig: DatabaseConfig = {
     | npm i sqlite3
     |
     */
-    sqlite: {
-      client: 'sqlite',
+    // sqlite: {
+    //   client: 'sqlite',
+    //   connection: {
+    //     filename: Application.tmpPath('db.sqlite3'),
+    //   },
+    //   migrations: {
+    //     naturalSort: true,
+    //   },
+    //   useNullAsDefault: true,
+    //   healthCheck: false,
+    //   debug: false,
+    // },
+
+    mysql: {
+      client: 'mysql',
       connection: {
-        filename: Application.tmpPath('db.sqlite3'),
+        host: Env.get('DB_HOST'),
+        port: Env.get('DB_PORT'),
+        user: Env.get('DB_USER'),
+        password: Env.get('DB_PASSWORD'),
+        database: Env.get('DB_DATABASE'),
       },
-      migrations: {
-        naturalSort: true,
-      },
-      useNullAsDefault: true,
-      healthCheck: false,
-      debug: false,
+      debug: Env.get('DB_DEBUG'),
     },
 
   }

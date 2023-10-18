@@ -1,0 +1,55 @@
+version: '3'
+services:
+  api_adonis:
+    build:
+      context: ./api_adonis
+      dockerfile: Dockerfile
+    container_name: api_projeto
+    ports:
+      - "3333:3333"
+    volumes:
+      - ./api_adonis/tmp/uploads:/app/tmp/uploads
+    environment:
+      - NODE_ENV=development
+    depends_on:
+      - mysql
+    networks:
+      - mynetwork
+
+  frontend_angular:
+    build:
+      context: ./frontend-angular
+      dockerfile: Dockerfile
+    container_name: frontend_projeto
+    ports:
+      - "4200:4200"
+    depends_on:
+      - api_adonis
+    networks:
+      - mynetwork
+
+  mysql:
+    build:
+      context: ./database
+      dockerfile: Dockerfile
+    container_name: mysql_projeto
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql # Mapeia o volume para armazenar os dados do MySQL
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_USER: projeto
+      MYSQL_PASSWORD: projeto
+      MYSQL_DATABASE: projeto
+      MYSQL_ROOT_HOST: "%"
+    command: --init-file /docker-entrypoint-initdb.d/setup.sql
+    networks:
+      - mynetwork
+
+networks:
+  mynetwork:
+    driver: bridge
+
+volumes:
+  mysql_data:

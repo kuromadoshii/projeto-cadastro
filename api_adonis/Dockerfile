@@ -1,7 +1,7 @@
 FROM node:16.17.0-alpine
 
 # Set working directory
-WORKDIR /usr/src/app
+WORKDIR /app
 
 # Install dependencies
 COPY package*.json ./
