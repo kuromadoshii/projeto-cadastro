@@ -37,12 +37,6 @@ services:
       - "3306:3306"
     volumes:
       - mysql_data:/var/lib/mysql # Mapeia o volume para armazenar os dados do MySQL
-    environment:
-      MYSQL_ROOT_PASSWORD: password
-      MYSQL_USER: projeto
-      MYSQL_PASSWORD: projeto
-      MYSQL_DATABASE: projeto
-      MYSQL_ROOT_HOST: "%"
     command: --init-file /docker-entrypoint-initdb.d/setup.sql
     networks:
       - mynetwork
