@@ -1,6 +1,9 @@
-GRANT ALL PRIVILEGES ON projeto.* TO 'projeto'@'%';
+-- drop user 'projeto'@'%';
+-- drop user 'projeto'@'localhost';
 
-USE projeto;
-SOURCE /tmp/dump.sql;
+-- create user 'projeto'@'localhost' IDENTIFIED BY 'password';
+-- create user 'projeto'@'%' IDENTIFIED BY 'password';
 
+GRANT ALL PRIVILEGES ON *.* TO 'projeto'@'%';
+ALTER USER 'projeto'@'%' IDENTIFIED BY 'password';
 FLUSH PRIVILEGES;
