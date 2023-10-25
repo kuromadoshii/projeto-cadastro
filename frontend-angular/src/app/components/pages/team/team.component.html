@@ -1,0 +1,55 @@
+<div class="team" *ngIf="team">
+  <h1>{{ team.title }}</h1>
+  <img
+    src="{{ baseApiUrl }}uploads/{{ team.image }}"
+    alt="{{ team.title }}"
+  />
+  <div class="about-team">
+    <h3>Descriçao:</h3>
+    <p>{{ team.description }}</p>
+  </div>
+  <div class="actions">
+    <h3>Ações:</h3>
+    <a routerLink="/teams/edit/{{ team.id }}" class="edit-btn"
+      ><fa-icon [icon]="faEdit"></fa-icon> Editar</a
+    >
+    <button class="remove-btn" (click)="removeHandler(team.id!)">
+      <fa-icon [icon]="faTimes"></fa-icon> Excluir
+    </button>
+  </div>
+  <div class="players">
+    <h3>
+      Jogadores ({{
+        team.players!.length > 0 ? team.players!.length : 0
+      }}):
+    </h3>
+    <div *ngIf="team.players!.length > 0; else noPlayers">
+      <div>
+        <div class="player-container" *ngFor="let player of team.players">
+          <p class="player">{{ player.player }}</p>
+          <!-- <p class="author"><span>por:</span> {{ comment.username }}</p> -->
+        </div>
+      </div>
+    </div>
+    <ng-template #noPlayers>
+      <p>Não há Jogadores</p>
+    </ng-template>
+  </div>
+  <div class="player-form">
+    <h3>Adicione um jogador:</h3>
+    <form
+      [formGroup]="playerForm"
+      #formDir="ngForm"
+      (ngSubmit)="onSubmit(formDir)"
+    >
+      <div class="form-group">
+        <label for="player">Jogador:</label>
+        <textarea formControlName="player" placeholder="Quem você quer adicionar?" required></textarea>
+        <div *ngIf="player.invalid && formDir.submitted" class="validation-error">
+          <p *ngIf="player.errors?.['required']">Obrigatório.</p>
+        </div>
+      </div>
+      <input type="submit" value="Adicionar"/>
+    </form>
+  </div>
+</div>

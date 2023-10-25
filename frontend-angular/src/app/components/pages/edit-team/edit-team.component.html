@@ -1,0 +1,11 @@
+<div *ngIf="team">
+  <h2>
+    Editando o momento <span>{{ team.title }}</span
+    >!
+  </h2>
+  <app-team-form
+    (onSubmit)="editHandler($event)"
+    [teamData]="team"
+    [btnText]="btnText"
+  ></app-team-form>
+</div>

@@ -9,7 +9,7 @@
   margin-bottom: 0.5em;
 }
 
-.moments-container {
+.teams-container {
   display: flex;
   flex-wrap: wrap;
   max-width: 60%;
@@ -17,24 +17,29 @@
   justify-content: space-between;
 }
 
-.moment {
+.test-cont {
+  min-width: 100%;
+}
+
+.team {
   width: 33%;
   margin-bottom: 1em;
   text-align: center;
+  word-break: break-all;
 }
 
-.moment img {
-  width: 230px;
-  height: 230px;
+.team img {
+  width: 100%;
+  max-height: 380px;
   margin-bottom: 1em;
 }
 
-.moment h3,
-.moment p {
+.team h3,
+.team p {
   margin-bottom: 1em;
 }
 
-.moment .date {
+.team .date {
   font-size: 0.7em;
   font-style: italic;
 }

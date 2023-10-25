@@ -10,13 +10,14 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/pages/home/home.component';
-import { MomentComponent } from './components/pages/moment/moment.component';
+import { TeamComponent } from './components/pages/team/team.component';
 import { AboutComponent } from './components/pages/about/about.component';
-import { NewMomentComponent } from './components/pages/new-moment/new-moment.component';
+import { NewTeamComponent } from './components/pages/new-team/new-team.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MessagesComponent } from './components/messages/messages.component';
-import { MomentFormComponent } from './components/moment-form/moment-form.component';
-import { EditMomentComponent } from './components/pages/edit-moment/edit-moment.component';
+import { TeamFormComponent } from './components/team-form/team-form.component';
+import { EditTeamComponent } from './components/pages/edit-team/edit-team.component';
+
 
 @NgModule({
   declarations: [
@@ -24,12 +25,12 @@ import { EditMomentComponent } from './components/pages/edit-moment/edit-moment.
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    MomentComponent,
+    TeamComponent,
     AboutComponent,
-    NewMomentComponent,
+    NewTeamComponent,
     MessagesComponent,
-    MomentFormComponent,
-    EditMomentComponent,
+    TeamFormComponent,
+    EditTeamComponent,
   ],
   imports: [
     BrowserModule,

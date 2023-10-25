@@ -7,7 +7,7 @@ CREATE TABLE `adonis_schema` (
     `migration_time` DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 
-CREATE TABLE `moments` (
+CREATE TABLE `teams` (
     `id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     `title` VARCHAR(255),
     `description` VARCHAR(255),
@@ -16,14 +16,13 @@ CREATE TABLE `moments` (
     `updated_at` DATETIME
 );
 
-CREATE TABLE `comments` (
+CREATE TABLE `players` (
     `id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    `username` VARCHAR(255),
-    `text` VARCHAR(255),
+    `player` VARCHAR(255),
     `moment_id` INT,
     `created_at` DATETIME,
     `updated_at` DATETIME,
-    FOREIGN KEY(`moment_id`) REFERENCES `moments`(`id`) ON DELETE CASCADE
+    FOREIGN KEY(`team_id`) REFERENCES `teams`(`id`) ON DELETE CASCADE
 );
 
 COMMIT;

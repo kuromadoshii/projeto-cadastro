@@ -1,1 +1,0 @@
-https://github.com/python-restx/flask-restx/issues/99

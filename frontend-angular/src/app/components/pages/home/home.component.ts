@@ -1,8 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 
-import { MomentService } from 'src/app/services/moment/moment.service';
+import { TeamService } from 'src/app/services/team/team.service';
 
-import { Moment } from 'src/app/Moment';
+import { Team } from 'src/app/Team';
 
 import { environment } from 'src/environments/environment';
 
@@ -14,17 +14,17 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  allMoments: Moment[] = [];
-  moments: Moment[] = [];
+  allTeams: Team[] = [];
+  teams: Team[] = [];
   baseApiUrl = environment.baseApiUrl;
 
   searchTerm: string = '';
   faSearch = faSearch;
 
-  constructor(private momentService: MomentService) {}
+  constructor(private teamService: TeamService) {}
 
   ngOnInit(): void {
-    this.momentService.getMoments().subscribe((items) => {
+    this.teamService.getTeams().subscribe((items) => {
       const data = items.data;
 
       data.map((item) => {
@@ -33,8 +33,8 @@ export class HomeComponent implements OnInit {
         );
       });
 
-      this.allMoments = items.data;
-      this.moments = items.data;
+      this.allTeams = items.data;
+      this.teams = items.data;
     });
   }
 
@@ -42,8 +42,8 @@ export class HomeComponent implements OnInit {
     const target = e.target as HTMLInputElement;
     const value = target.value;
 
-    this.moments = this.allMoments.filter((moment) =>
-      moment.title.toLowerCase().includes(value)
+    this.teams = this.allTeams.filter((team) =>
+      team.title.toLowerCase().includes(value)
     );
   }
 }

@@ -22,7 +22,7 @@ import Route from '@ioc:Adonis/Core/Route'
 
 // HABILITAR CORS
 Route.group(() => {
-  Route.resource('/moments', 'MomentsController').apiOnly()
+  Route.resource('/teams', 'TeamsController').apiOnly()
 
-  Route.post('/moments/:momentId/comments', 'CommentsController.store')
+  Route.post('/teams/:teamId/players', 'PlayersController.store')
 }).prefix('/api')
